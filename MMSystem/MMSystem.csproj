@@ -103,6 +103,73 @@
 
 
   <ItemGroup>
+    <None Include="wwwroot\css\base.css" />
+    <None Include="wwwroot\css\font-awesome\css\font-awesome.css" />
+    <None Include="wwwroot\css\font-awesome\css\font-awesome.min.css" />
+    <None Include="wwwroot\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\css\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\css\fonts.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\vendor.css" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-bold-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-bold-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-italic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-italic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-regular-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\librebaskerville\librebaskerville-regular-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-black-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-black-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-black-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-blackitalic-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-blackitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-blackitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-bold-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-bold-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-bold-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-bolditalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-bolditalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extrabold-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extrabold-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extrabolditalic-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extrabolditalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extrabolditalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extralight-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extralight-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extralight-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extralightitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-extralightitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-light-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-light-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-lightitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-lightitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-medium-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-medium-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-medium-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-mediumitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-mediumitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-regular-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-regular-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-regular-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-regularitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-regularitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibold-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibold-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibold-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibolditalic-webfont.ttf" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibolditalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-semibolditalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-thin-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-thin-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-thinitalic-webfont.woff" />
+    <None Include="wwwroot\FrontEnd\fonts\metropolis\metropolis-thinitalic-webfont.woff2" />
+    <None Include="wwwroot\FrontEnd\js\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\FrontEnd\js\main.js" />
+    <None Include="wwwroot\FrontEnd\js\modernizr.js" />
+    <None Include="wwwroot\FrontEnd\js\pace.min.js" />
+    <None Include="wwwroot\FrontEnd\js\plugins.js" />
     <None Include="wwwroot\lib\css\base.css" />
     <None Include="wwwroot\lib\css\font-awesome\css\font-awesome.css" />
     <None Include="wwwroot\lib\css\font-awesome\css\font-awesome.min.css" />
@@ -182,6 +249,11 @@
     <None Include="wwwroot\lib\js\modernizr.js" />
     <None Include="wwwroot\lib\js\pace.min.js" />
     <None Include="wwwroot\lib\js\plugins.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\FrontEnd\css\" />
   </ItemGroup>
 
 </Project>
