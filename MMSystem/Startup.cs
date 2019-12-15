@@ -122,7 +122,7 @@ namespace MMSystem
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
 
             // This will add "Libs" as another valid static content location
             
