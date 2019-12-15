@@ -1,0 +1,105 @@
+﻿@model MMSystem.Models.Customer
+@{
+    Layout = "_LayoutShop";
+    ViewData["Title"] = "CreateCustomer";
+}
+<script src="https://js.stripe.com/v2/"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<h1>TEST</h1>
+<div  style="width:100%;height:100%;background-color:#f2f2f2;">
+    <div>
+        1. General Information
+
+        <div id="InfoHolder" style="width:85%;">
+            <form id="CustomerInfoForm" asp-action="CreateCustomer" asp-controller="Checkout">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table style="padding:0px 0px 0px 0px;">
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="FirstName" class="control-label2">First Name</label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="FirstName" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="LastName" class="control-label">Last Name</label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="Address" class="control-label"></label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="City" class="control-label"></label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="StateId" class="control-label">State</label></center>
+                        </td>
+                        <td colspan="2">
+                            <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="ZipCode" class="control-label">Zip Code</label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="ZipCode" class="form-control" />
+                            <span asp-validation-for="ZipCode" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="Email" class="control-label"></label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="Email" type="email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><label asp-for="Phone" class="control-label"></label></center>
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="Phone" type="tel" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+
+                            <input asp-for="CartId" type="hidden" value="@ViewBag.CartId" />
+                            <center><button id="Checkout" class="btn" asp-controller="Checkout" asp-action="AddCustomer" asp-route-Id="@ViewBag.CartId">Next</button> </center>
+                            <input type="submit" value="CreateCustomer" class="btn btn-primary" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>s
+    </div>
+</div>
+
+     

@@ -1,0 +1,157 @@
+﻿@model MMSystem.Models.PagedList<MMSystem.Models.ViewModels.MerchIndexListVm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by title: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Single().Merch.Title)</a>
+                        </th>
+                        <!--<th> TGMGMTLLC Template
+                    @Html.DisplayNameFor(model => model.Single().Merch.MerchTypeId)
+                </th>-->
+                        <th>
+                            @Html.DisplayNameFor(model => model.Single().Merch.Price)
+                        </th>
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.Single().Merch.StatusId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Single().Merch.Size)
+                        </th>
+                        <th>
+                            Upload
+                        </th>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Created On</a>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Merch.Title)
+                            </td>
+                            <td>
+                                $@Html.DisplayFor(modelItem => item.Merch.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StatusIdName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Merch => item.SizeName)
+                            </td>
+
+                            <td>
+                                <img src="@(item.Merch.PictureUrl)" style="max-height:200px;max-width:200px;" />
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Merch => item.Merch.CreatedOn)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Merch.MerchId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Merch.MerchId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Merch.MerchId">Delete</a> |
+                                <a asp-action="Index" asp-controller="Replica" asp-route-id="@item.Merch.MerchId">Replica<!--//TGMGMTLLC Template change to prints for Art only OR REPLICA OR something else for others--></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+                <!--<table class="table">
+            <thead>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="ViewData["DateSortParm"]">Html.DisplayNameFor(model => model.Single().CreatedOn)</a>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                foreach (var merch in Model)
+                {
+                    <tr>
+                        <td>
+                            Html.DisplayFor(modelItem => merch.Title)
+                        </td>
+                        <td></td>
+                        <td>
+                            Html.DisplayFor(modelItem => merch.CreatedOn)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="merch.MerchId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="merch.MerchId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="merch.MerchId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>-->
+                <!--
+            (Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled("Name");
+            columns.Add(model => model.Surname).Titled("Surname");
+
+            columns.Add(model => model.Age).Titled("Age");
+            columns.Add(model => model.Birthday).Titled("Birth date");
+            columns.Add(model => model.IsWorking).Titled("Employed");
+        })
+        .Filterable()
+        .Sortable()
+        .Pageable()
+            )
+            -->
+            </table>
+            @{
+                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+            }
+
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default btn-outline-secondary btn-light @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default btn-outline-secondary btn-light @nextDisabled">
+                Next
+            </a>
+
+        </p>
+            </div>
+        </form>

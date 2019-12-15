@@ -1,0 +1,299 @@
+﻿@model  MMSystem.Models.ViewModels.MerchOwnerVm
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@Model.Owner.WebsiteTitle</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/lib/css/base.css">
+    <link rel="stylesheet" href="~/lib/css/vendor.css">
+    <link rel="stylesheet" href="~/lib/css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="~/lib/js/modernizr.js"></script>
+    <script src="~/lib/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+    <!-- pageheader
+    ================================================== -->
+    <section class="s-pageheader s-pageheader--home">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <div class="header__logo">
+                    <h2 class="card-title text-white-50" style="color:white;">@Model.Owner.WebsiteTitle</h2>
+
+                </div> <!-- end header__logo -->
+
+                <ul class="header__social">
+                    @if (@Model.Owner.Facebook != null)
+                    {
+                        <li>
+                            <a href="@Model.Owner.Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><!--TGMGMTLLC Template for all of the below-->
+                        </li>
+                    }
+                    @if (@Model.Owner.Twitter != null)
+                    {
+                        <li>
+                            <a href="@Model.Owner.Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                    }
+                    @if (@Model.Owner.Instagram != null)
+                    {
+                        <li>
+                            <a href="@Model.Owner.Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                    }
+                    @if (@Model.Owner.Pintrest != null)
+                    {
+                        <li>
+                            <a href="@Model.Owner.Pintrest" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                    }
+                    </ul> <!-- end header__social -->
+                
+                    <div style="float:right">
+                        <a href="/Home/ViewCart">
+                            <img src="~/lib/images/icons/thecart.png" style="height:50px;width:50px;top:0px;display:block;float:left" />
+                            <h2 style="color:ghostwhite;display:block;float:right;top:0px;margin:8px 0px 0px 0px;font-family:'Gill Sans'">@Model.ShoppinCart.CartItems.Count.ToString()<!--Cart.Count--></h2>
+                        </a>
+                    </div>
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+
+
+        <div class="pageheader-content row">
+            <div class="col-full">
+
+                <div class="featured">
+
+                    <div class="featured__column featured__column--big">
+                        <div class="entry" style="background-image:url('@Model.Owner.ProfilePicture');"></div>
+                    </div>
+                    <div class="featured__column featured__column--small">
+
+                        <div class="entry" style="background-image:url('../lib/images/thumbs/featured/featured-watch.jpg');">
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0">News</a></span>
+
+                                <h1><a href="#0" title="">The title here limited to.</a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="../lib/images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        
+                                        <li>Date here, 2017</li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                        <div class="entry" style="background-image:url('../lib/images/thumbs/featured/featured-beetle.jpg');">
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0">LifeStyle</a></span>
+
+                                <h1><a href="#0" title="">Throwback To The Good Old Days.</a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="../lib/images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li>Date here, 2017</li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__small -->
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end pageheader-content row -->
+                
+            
+    </section> <!-- end s-pageheader -->
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content">
+
+        <div class="row masonry-wrap">
+            <div class="masonry" style="width:100%;">
+
+                <div class="grid-sizer"></div>
+                <!------------------------------------------------------------------------------>
+                @foreach (var MerchList in Model.MerchIndexListVm)
+                {
+                    <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                        <div class="entry__thumb">
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@MerchList.Merch.MerchId" class="entry__thumb-link">
+                                <img src="@MerchList.Merch.PictureUrl"
+                                     srcset="@MerchList.Merch.PictureUrl 1x, @MerchList.Merch.PictureUrl 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
+                                <div class="entry__date">
+                                    <!--Maybe have a variable here that decides if you want to show date or now. Something in the Owner template-->
+                                    @{var TheDate = MerchList.Merch.CreatedOn.ToString().Split(" ");}
+                                    <a href="single-standard.html">@TheDate[0].ToString()</a>
+                                </div>
+                                <h1 class="entry__title"><a asp-controller="Home" asp-action="Details" asp-route-id="@MerchList.Merch.MerchId">@MerchList.Merch.Title</a></h1>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    @MerchList.Merch.Description
+                                </p>
+                            </div>
+                            <!--<a asp-controller="Home" asp-action="Details" class="btn--medium">Info</a>-->
+                        </div>
+
+                    </article> <!-- end article -->
+                }
+                
+
+            </div> <!-- end masonry -->
+        </div> <!-- end masonry-wrap -->
+        Add Paging from Merch Index here (maybe next/previous button?)
+        <br/> Search bar
+        <br/> Maybe at the top once they scroll down enough so you can't see the profile picture.
+        </section>
+    <!-- Java Script
+    ================================================== -->
+    <script src="~/lib/js/jquery-3.2.1.min.js"></script>
+    <script src="~/lib/js/plugins.js"></script>
+    <script src="~/lib/js/main.js"></script>
+
+
+  
+    
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+
+                <div class="col-two md-four mob-full s-footer__sitelinks">
+
+                    <h4>Quick Links</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">Home</a></li>
+                        <li><a href="#0">Blog</a></li>
+                        <li><a href="#0">Styles</a></li>
+                        <li><a href="#0">About</a></li>
+                        <li><a href="#0">Contact</a></li>
+                        <li><a href="#0">Privacy Policy</a></li>
+                    </ul>
+                    
+                </div> <!-- end s-footer__sitelinks -->
+
+                <div class="col-two md-four mob-full s-footer__archives">
+
+                    <h4>Archives</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">January 2018</a></li>
+                        <li><a href="#0">December 2017</a></li>
+                        <li><a href="#0">November 2017</a></li>
+                        <li><a href="#0">October 2017</a></li>
+                        <li><a href="#0">September 2017</a></li>
+                        <li><a href="#0">August 2017</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__archives -->
+
+                <div class="col-two md-four mob-full s-footer__social">
+
+                    <h4>Social</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">Facebook</a></li>
+                        <li><a href="#0">Instagram</a></li>
+                        <li><a href="#0">Twitter</a></li>
+                        <li><a href="#0">Pinterest</a></li>
+                        <li><a href="#0">Google+</a></li>
+                        <li><a href="#0">LinkedIn</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__social -->
+
+                <div class="col-five md-full end s-footer__subscribe">
+
+                    <h4>Stay up to date!</h4>
+
+                    <p>If you want updates from us about new and exciting stuff, join our news list!</p>
+
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+
+                            <input type="submit" name="subscribe" value="Send">
+
+                            <label for="mc-email" class="subscribe-message"></label>
+
+                        </form>
+                    </div>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span>
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+    </footer> <!-- end s-footer -->
+    
+</body>
+
+</html>

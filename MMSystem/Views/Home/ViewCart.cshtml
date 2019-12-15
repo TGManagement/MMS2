@@ -1,0 +1,78 @@
+﻿@model MMSystem.Models.ShoppingCart
+@{
+    Layout = "_LayoutShop";
+}
+
+
+
+@{
+/* var safeStringValue = ViewBag.someStringValue
+     .Replace("\\", "\\\\")
+     .Replace("'", "\\'");
+}
+var someStringValue = '@(safeStringValue)';*/
+}
+
+
+    <form >
+        <div id="DisplayHolder" style="width:100%;height:100%;background-color:#f2f2f2;">
+            <table>
+                <tr>
+                    <!--<th></th>
+                <th>Title</th>
+                <th>Size</th>
+                <th>Price</th>-->
+                </tr>
+                @foreach (CartItem TempCartItem in Model.CartItems)
+                {
+                    <tr>
+                        <td colspan="2">
+                            <!--Need to create a link here that blows it up-->
+                            <a href=""><img height="60" width="60" src="@ViewData["MerchImage" + TempCartItem.CartItemId.ToString()]" /></a>
+                        </td>
+                        <td>
+                            @ViewData["MerchName" + TempCartItem.CartItemId.ToString()]
+                            <!--Item.Name Same problem here. Need to include a reference to Merch or Replica so we can pull all the info-->
+                        </td>
+                        <td>
+                            @ViewData["MerchMaterialName" + TempCartItem.CartItemId.ToString()]<br />
+                            @ViewData["MerchSizeName" + TempCartItem.CartItemId.ToString()]<br />
+                            @ViewData["Replica" + TempCartItem.CartItemId.ToString()]
+
+                        </td>
+                        <td>
+                            $@TempCartItem.Price
+                        </td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="3"></td>
+                    <td>@Model.CartItems.Count.ToString()  @if (Model.CartItems.Count > 1) { Write("items"); } else { Write("item"); }</td>
+                    <td>$@Model.Total</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Shipping:</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Total</td>
+                    <td>$@(Model.Total + 15)</td>
+                </tr>
+            </table>
+            <center><button id="Checkout" class="btn" asp-controller="Checkout" asp-action="CreateCustomer" asp-route-Id="@Model.Cart.CartId">Check Out</button> </center>
+
+        </div>
+    </form>
+
+@section Scripts {
+    @{
+<script type="text/javascript">
+
+</script>
+
+
+    }
+}

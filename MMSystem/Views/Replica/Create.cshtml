@@ -1,0 +1,64 @@
+﻿@model MMSystem.Models.Replica
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Replica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <input type="hidden" asp-for="MerchId" value="@(ViewData["MerchId"])" class="form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <img src="@(ViewData["PictureUrl"])" style="max-height:200px;max-width:200px;" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SizeId" class="control-label">Size (HxW)</label>
+                <select asp-for="SizeId" class="form-control" asp-items="ViewBag.SizeId">Size</select>
+                <span asp-validation-for="SizeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialId" class="control-label">Material</label>
+                <select asp-for="MaterialId" class="form-control" asp-items="ViewBag.MaterialId">Material</select>
+                <span asp-validation-for="MaterialId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Price</label>
+                $<input type="text" asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@Model.MerchId">Back to List</a>
+</div>
+
+<!--$(function () {
+
+        $("#MerchIdDropDown").change(function () {
+
+            var t = $(this).val();
+            if (t !== "") {
+                //Response.redirect("Details/" + t.toString());
+                $.post("@Url.Action("UpdateReplicaOptions", "Replica")?TheId=" + t);
+            }
+
+        });
+    });-->
+
+@section Scripts {
+    @{
+        <script></script>
+    }
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

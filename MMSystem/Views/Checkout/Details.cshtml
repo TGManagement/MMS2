@@ -1,0 +1,185 @@
+﻿@model MMSystem.Models.ViewModels.MerchReplicasVM
+@{
+    Layout = "_LayoutShop";
+    ViewData["Title"] = "Details";
+}
+
+
+
+@{
+/* var safeStringValue = ViewBag.someStringValue
+     .Replace("\\", "\\\\")
+     .Replace("'", "\\'");
+}
+var someStringValue = '@(safeStringValue)';*/
+}
+
+
+
+<div id="DisplayHolder" style="width:100%;height:100%;background-color:#f2f2f2;">
+    @{ var tester = Model.SizeName.ToString().Split("x");
+        decimal ratio = Convert.ToDecimal(tester.GetValue(0).ToString()) / Convert.ToDecimal(tester.GetValue(1).ToString());}
+    <div id="PictureHolder" class="entry__thumb" style="@{if (ratio > 1) { Write("width:30%;height:57%"); } else {Write("width:65%;height:90%"); }} padding-left:1%;padding-top:1%;display:block;float:left">
+        @{
+            <!--Write(tester.GetValue(0).ToString());
+         Write(tester.GetValue(1).ToString());
+         Write(ratio.ToString());-->}
+
+
+        <img src="@Model.Merch.PictureUrl"
+             srcset="@Model.Merch.PictureUrl 1x, @Model.Merch.PictureUrl 1x" alt="" style="max-height:100%;">
+
+    </div>
+    <div id="InfoHolder" style="@{if (ratio > 1) { Write("width:50%;height:90%"); } else {Write("width:34%;height:90%"); }}display:block;float:right;">
+
+        @if (Model.Merch.StatusId == 1 || Model.Merch.StatusId == 2 || Model.Merch.StatusId == 98 || Model.Merch.StatusId == 99)
+        {
+
+            <h4 class="header__content" style="margin-top:0px;color:antiquewhite;">Original:</h4>
+
+            @if (Model.Merch.StatusId == 1 || Model.Merch.StatusId == 2)
+            {
+                //Available
+                <center><button class="small" id="AddOriginalToCart" asp-action="AddToCart" asp-route-Print="True">Add To Cart</button></center>
+            }
+            @if (Model.Merch.StatusId == 98 || Model.Merch.StatusId == 99)
+            {
+                <center><h5 style="margin-top:0px;color:antiquewhite;">Sold</h5></center>
+            }
+
+
+
+        }
+        @if (Model.Merch.StatusId == 0 || Model.Merch.StatusId == 2 || Model.Merch.StatusId == 98)
+        {
+            //Need to add the wording based on MerchType
+
+            @switch (Model.Merch.MerchTypeId)
+            {
+                case 1:
+                    <h4 class="header__content" style="color:antiquewhite;margin-top:0px;">Prints:</h4>
+
+                    break;
+                case 2:
+                    <h4 class="header__content" style="color:antiquewhite;margin-top:0px;">Pottery:</h4>
+                    break;
+            }
+            @if (ViewData["ReplicaCount"].ToString() == "0")
+            {
+                <h3  style="color:white">Coming Soon</h3>
+
+            }
+            else
+            {
+                <div class="form-group">
+                    <form asp-controller="Checkout" asp-action="UpdateReplicaSize" id="ReplicaForm" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <table style="float:left;">
+                            <tr>
+                                <td><label class="control-label NoPadding" style="color:antiquewhite;font-size:30px;">Material:</label></td>
+                                <td><label class="control-label NoPadding" style="color:antiquewhite;font-size:30px;">Size (hxw):</label></td>
+                            </tr>
+                            <tr>
+                                <td style="border-bottom-width: 0px;padding-right:1.5%;padding-top:0px;padding-bottom:0px"><select id="MaterialTypeDropDown" asp-for="Replica.MaterialId" name="Material" class="form-control dropdown bg-light" style="background-color:white;" asp-items="ViewBag.MaterialId"></select></td>
+                                <td style="border-bottom-width: 0px;padding-left:1.5%;padding-top:0px;padding-bottom:0px;">
+                                    <select id="SizeDropDown" asp-for="Replica.SizeId" class="btn-secondary is-hidden" name="Size" style="background-color:white;">
+                                        <option>Select a Material</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><center><button id="AddPrintToCart" asp-action="AddToCart" asp-route-Print="true" title="Add" class="is-hidden">Add To Cart</button></center></td>
+                            </tr>
+                        </table>
+                    </form>
+
+                </div>
+            }
+
+
+        }
+        else
+        {
+            <h3 class="header__content">Not available right now</h3>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+<script type="text/javascript">
+
+        function DetermineMaterialSize() {
+            var token = $('input[name="__RequestVerificationToken"]', $('#ReplicaForm')).val();
+            var myData = { MaterialId: $("#MaterialTypeDropDown").val() };
+            console.log(myData.MaterialId.toString());
+            var dataWithAntiforgeryToken = $.extend(myData, { '__RequestVerificationToken': token });
+            $.ajax({
+                url: "/Checkout/UpdateReplicaSize",
+                type: "POST",
+                data: dataWithAntiforgeryToken,
+                success: function (data) {
+                    $("#SizeDropDown").empty();
+                    $("#SizeDropDown").addClass("visible");
+                    $("#SizeDropDown").removeClass("is-hidden"); 
+                    $("#SizeDropDown").fadeIn();
+                    $("#AddPrintToCart").addClass("visible");
+                    $("#AddPrintToCart").removeClass("is-hidden");
+                    
+                    
+                    var count = 0;
+                    data.forEach(function (element) {
+                        $("#SizeDropDown").append("<option>" + element + "</option>");
+                        count = count + 1;
+                    });
+                    if (count == 0) {
+                        //$("#SizeDropDown").hide();
+                        $("#AddPrintToCart").addClass("visible");
+                        $("#AddPrintToCart").removeClass("is-hidden");
+                        
+                        $("#SizeDropDown").append("<option>N/A</option>");
+                    }
+                },
+                error: function () {
+                    $("#SizeDropDown").empty();
+                }
+            });
+        }
+    $("#MaterialTypeDropDown").on('change', DetermineMaterialSize);
+
+    function EnablePrintAddToCart() {
+            var token = $('input[name="__RequestVerificationToken"]', $('#ReplicaForm')).val();
+            var myData = { Id: $("#SizeDropDown").val() };
+            console.log(myData.MaterialId.toString());
+            var dataWithAntiforgeryToken = $.extend(myData, { '__RequestVerificationToken': token });
+            $.ajax({
+                url: "/Checkout/EnableAddToCart",
+                type: "POST",
+                data: dataWithAntiforgeryToken,
+                success: function (data) {
+                    if (data) {
+                        $("#AddPrintToCart").attr("disabled", false);
+                    }
+                    else {
+                        $("#AddPrintToCart").attr("disabled", true);
+                    }
+                    
+                },
+                error: function () {
+                   $("#AddPrintToCart").attr("disabled", true);
+                }
+            });
+        }
+        $("#SizeDropDown").on('change', EnablePrintAddToCart);
+
+          //var someStringValue = '@(ViewBag.MaterialId)';
+    //var someNumericValue = @(ViewBag.MaterialId);
+    //console.log(someStringValue);
+
+</script>
+
+
+    }
+}

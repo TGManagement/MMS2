@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<MMSystem.Models.ViewModels.ReplicaIndexListVm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@(ViewData["MerchId"])">Create Replica</a>
+</p>
+<center><img src="@(ViewData["PictureUrl"])" style="max-height:200px;max-width:200px;"/></center>
+<br/><br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Size
+            </th>
+            <th>
+                Material
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Replica.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Replica.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Replica.ReplicaId">Edit</a> |
+                <!----><a asp-action="Details" asp-route-id="@item.Replica.ReplicaId">Details</a> |-->
+                <a asp-action="Delete" asp-route-id="@item.Replica.ReplicaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

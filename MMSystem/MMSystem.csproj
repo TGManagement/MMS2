@@ -1,0 +1,187 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-MMSystem-A5623402-61E6-46BB-A9F7-81AE569E565C</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Greesemonkey3\source\repos\MMS\MMSystem\MMSystem.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\css\base.css" />
+    <Content Remove="wwwroot\lib\css\font-awesome\css\font-awesome.css" />
+    <Content Remove="wwwroot\lib\css\font-awesome\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Remove="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Remove="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Remove="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Remove="wwwroot\lib\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Remove="wwwroot\lib\css\fonts.css" />
+    <Content Remove="wwwroot\lib\css\main.css" />
+    <Content Remove="wwwroot\lib\css\vendor.css" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-bold-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-bold-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-italic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-italic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-regular-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\librebaskerville\librebaskerville-regular-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-bolditalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-bolditalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extrabold-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extrabold-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extralightitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-extralightitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-light-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-light-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-lightitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-lightitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-mediumitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-mediumitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-regularitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-regularitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.ttf" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-thin-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-thin-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-thinitalic-webfont.woff" />
+    <Content Remove="wwwroot\lib\fonts\metropolis\metropolis-thinitalic-webfont.woff2" />
+    <Content Remove="wwwroot\lib\js\jquery-3.2.1.min.js" />
+    <Content Remove="wwwroot\lib\js\main.js" />
+    <Content Remove="wwwroot\lib\js\modernizr.js" />
+    <Content Remove="wwwroot\lib\js\pace.min.js" />
+    <Content Remove="wwwroot\lib\js\plugins.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="bootstrap" Version="4.3.1" />
+    <PackageReference Include="DotNetShipping" Version="0.9.5.90" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="ILoggerDataExtensions" Version="1.0.0.2" />
+    <PackageReference Include="ILoggerLib" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Stripe.net" Version="28.4.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\css\base.css" />
+    <None Include="wwwroot\lib\css\font-awesome\css\font-awesome.css" />
+    <None Include="wwwroot\lib\css\font-awesome\css\font-awesome.min.css" />
+    <None Include="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\lib\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\lib\css\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\lib\css\fonts.css" />
+    <None Include="wwwroot\lib\css\main.css" />
+    <None Include="wwwroot\lib\css\vendor.css" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-bold-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-bold-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-italic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-italic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-regular-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\librebaskerville\librebaskerville-regular-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-black-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-blackitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-bold-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-bolditalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-bolditalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extrabold-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extrabold-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extrabolditalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extralight-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extralightitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-extralightitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-light-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-light-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-lightitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-lightitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-medium-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-mediumitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-mediumitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-regular-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-regularitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-regularitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibold-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.ttf" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-semibolditalic-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-thin-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-thin-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-thinitalic-webfont.woff" />
+    <None Include="wwwroot\lib\fonts\metropolis\metropolis-thinitalic-webfont.woff2" />
+    <None Include="wwwroot\lib\images\icons\icon-arrow-left-w.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-arrow-left.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-arrow-right-w.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-arrow-right.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-arrow-up.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-link.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-mail.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-quote.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-search.svg" />
+    <None Include="wwwroot\lib\images\icons\icon-video.svg" />
+    <None Include="wwwroot\lib\images\logo.svg" />
+    <None Include="wwwroot\lib\images\mejs\mejs-controls.svg" />
+    <None Include="wwwroot\lib\js\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\lib\js\main.js" />
+    <None Include="wwwroot\lib\js\modernizr.js" />
+    <None Include="wwwroot\lib\js\pace.min.js" />
+    <None Include="wwwroot\lib\js\plugins.js" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MMSystem</title>
+
+
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Website Title here</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/lib/css/base.css">
+    <link rel="stylesheet" href="~/lib/css/vendor.css">
+    <link rel="stylesheet" href="~/lib/css/main.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- script
+    ================================================== -->
+    <script src="~/lib/js/modernizr.js"></script>
+    <script src="~/lib/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Java Script
+    ================================================== -->
+    <script src="~/lib/js/jquery-3.2.1.min.js"></script>
+    <script src="~/lib/js/plugins.js"></script>
+    <script src="~/lib/js/main.js"></script>
+</head>
+<body>
+    
+    <section class="s-pageheader s-pageheader--home" style="padding-top:115px;">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <ul class="header__social">
+                <li>facebook info</li>
+                    @if (Context.Session.GetString("Facebook") != null)
+                    {
+                        <li>
+                            <a href="@Context.Session.GetString("Facebook")" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><!--TGMGMTLLC Template for all of the below-->
+                        </li>
+                    }
+                    
+                </ul> <!-- end header__social -->
+
+                <div style="float:right">
+                    <img src="~/lib/images/icons/thecart.png" style="height:50px;width:50px;top:0px;display:block;float:left" />
+
+                    <h2 style="color:ghostwhite;display:block;float:right;top:0px;margin:8px 0px 0px 0px;font-family:'Gill Sans'">3<!--Cart.Count--></h2>
+                </div>
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+
+
+        <div class="pageheader-content row" >
+            <div class="col-full">
+
+                <div class="featured" style="max-height:none;height:auto">
+                    @RenderBody()
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end pageheader-content row -->
+
+
+    </section>
+
+   <!-- <section class="s-content">
+       
+    </section>
+    -->
+
+
+
+
+
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+                <div class="col-two md-four mob-full s-footer__sitelinks">
+                    <h4>Quick Links</h4>
+
+                </div> <!-- end s-footer__sitelinks -->
+
+                <div class="col-two md-four mob-full s-footer__archives">
+                    <h4>Archives</h4>
+                </div> <!-- end s-footer__archives -->
+                <div class="col-two md-four mob-full s-footer__social">
+                    <h4>Social</h4>
+                </div> <!-- end s-footer__social -->
+                <div class="col-five md-full end s-footer__subscribe">
+                    <h4>Stay up to date!</h4>
+
+                    <p>If you want updates from us about new and exciting stuff, join our news list!</p>
+
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+
+                            <input type="submit" name="subscribe" value="Send">
+
+                            <label for="mc-email" class="subscribe-message"></label>
+
+                        </form>
+                    </div>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span>
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+    </footer> <!-- end s-footer -->
+
+    @RenderSection("Scripts", required: false)
+    @using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor HttpContextAccessor
+    <script>
+   ViewData = '@HttpContextAccessor.HttpContext.Session.GetString("Facebook")';
+//   alert(isFiltered);
+    </script>
+</body>
+</html>
